@@ -1,11 +1,11 @@
 Rock Paper Scissors
 ===================================
-![Assignment Checks](https://github.com/IT3049C/3.Rock-Paper-Scissors/workflows/Assignment%20Checks/badge.svg)
+![Assignment Checks](https://s///github.com/wangm7/Assignment3_rock_paper_scissors/workflows/Assignment%20Checks/badge.svg)
 
 Instructions to this assignment can be found [here](https://it3049c.github.io/Material/Assignments/3.Rock_Paper_Scissors/).
 
 ## Checklist:
-- [ ] update the assignment checks above to the correct link
+- [x] update the assignment checks above to the correct link. - Done Automatically
 - [ ] make sure the assignment checks pass
 - [ ] fill out the self evaluation and Reflection
 - [ ] submit the repository link on Canvas
