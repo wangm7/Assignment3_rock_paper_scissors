@@ -1,9 +1,10 @@
 class RockPaperScissors {
+
   constructor(username) {
     this.username = username;
     this.score = {
       user: 0,
-      cpu:0 
+      cpu: 0 
     },
     this.gameHistoryLog = [];
   }
@@ -14,8 +15,7 @@ class RockPaperScissors {
    */
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
-    let cpuSelection =  acceptedValues[Math.floor(Math.random()*acceptedValues.length)];
-    return cpuSelection;
+    return acceptedValues[Math.floor(Math.random()*acceptedValues.length)];
   };
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -49,26 +49,34 @@ class RockPaperScissors {
       }
     } else if (userSelection === 'scissors') {
       if (cpuSelection === 'rock') {
-       
         return 'lose';
       } else {
         return 'win';
       }
     }
-    
   };
 
-  /**
+  /**[const | let | var] = function () {} (or () =>
    * 
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
-   */
+  */
   play(userSelection){
-    generateCPUResponse();
-    determineWinner(userSelection, generateCPUResponse);
-    this.gameHistoryLog.push(`${this.username} selected ${this.userSelection}, CPU selected ${this.cpuSelection}: CUP wins wins`);
-    this.score.cpu ++;
-    this.gameHistoryLog.push(`${this.username} selected ${this.userSelection}, CPU selected ${this.cpuSelection}: ${this.username} wins wins`);
-    this.score.user ++;
-    return constructor(username); 
+    this.userSelection = userSelection.toLocaleLowerCase();
+    console.log(this.userSelection);
+   
+    this.cpuSelection = this.generateCPUResponse();
+    console.log(this.cpuSelection);
+
+    const result = this.determineWinner(this.userSelection, this.cpuSelection);
+    if(result === 'tie'){
+      this.gameHistoryLog.push(`${this.username} selected ${this.userSelection}, CPU selected ${this.cpuSelection}: tie`);
+    } else if(result === 'lose'){
+      this.score.cpu ++;
+      this.gameHistoryLog.push(`${this.username} selected ${this.userSelection}, CPU selected ${this.cpuSelection}: CUP wins wins`);
+    } else if(result === "win"){
+      this.score.user ++;
+      this.gameHistoryLog.push(`${this.username} selected ${this.userSelection}, CPU selected ${this.cpuSelection}: ${this.username} wins wins`);
     }
+  }
+
 }

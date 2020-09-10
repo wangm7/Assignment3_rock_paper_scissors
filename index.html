@@ -15,40 +15,32 @@
         <h1>rock paper scissors</h1>
         
         <div id="welcome-screen">
-            <div class="form-group">
-                <from id="name-form">
-                    <div>
-                        <label for="username">Your Name: </label>
-                        <input type="text" id="username" class="form-control" name="username" placeholder="Enter Name Here…">
-                        <button id="start-game-button" class="btn btn-primary" data-toggle="buttons">Start Game!</button>
-                    </div>
-                </from>
-            </div>
+                <form id="name-form">
+                        <div class="form-group">
+                            <label for="username">Your Name: </label>
+                            <input type="text" id="username" class="form-control" name="username" placeholder="Enter Name Here...">
+                        </div>
+                        <button type="button" id="start-game-button" class="btn btn-primary" data-toggle="buttons">Start Game!</button>
+                </form>        
         </div>
 
         <div id="game-screen">
-            
             <div id="score-tally">
                 <p id="score">User: 0 v CPU: 0</p>
             </div>
-
-        <div class="form-group">
             <form id="game-form">
-                <div>
+                <div class="form-group">
                     <label for="user-selection">Select your choice: </label>
-                    <select class="custom-select" id="user-selection">
+                    <select name="user-selection" class="custom-select" id="user-selection">
                         <option value="Rock">Rock</option>
                         <option value="Paper">Paper</option>
                         <option value="Scissors">Scissors</option>
-                    </select><br>
-                    <button id="go-button"class="btn btn-success" data-toggle="buttons">Go!</button>
+                    </select>
                 </div>
+                <button type="button" id="go-button" class="btn btn-success" data-toggle="buttons">Go!</button>
             </form>
-        </div>
             <p id="game-history"></p>
-
         </div>
-
         <!-- WORK FROM INSIDE THIS CONTAINER-->
 
     </div>

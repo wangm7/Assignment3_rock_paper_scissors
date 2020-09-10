@@ -12,17 +12,20 @@ const gameHistoryParagraph = document.getElementById('game-history');
 let game = new RockPaperScissors();
 
 // hide gamescreen
-//gameScreen.classList.add(`d-none`);
+gameScreen.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
+  const username = userName.value;
   let userScore = game.score.user;
   let cpuScore = game.score.cpu;
-  scoreParagraph.innerHTML = userName + ': ' + userScore + ' v CPU: ' + cpuScore;
+  scoreParagraph.innerText = username +': '+ userScore + ' v CPU: ' + cpuScore;
 }
 // updateGameHistoryUI
 function updateGameHistoryUI(){
+  const clearInnerHTML = gameHistoryParagraph.innerHTML.length;
   gameHistoryParagraph.innerHTML = game.gameHistoryLog;
+  console.log(game.gameHistoryLog);
 }
 
 // start-game-button EventListener
@@ -39,7 +42,9 @@ startGameButton.addEventListener(`click`, function () {
 
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
-  game.play(userSelection.value.toLocaleLowerCase());
+  userselection = userSelection.value;
+  game.play(userselection);
   updateScoreTallyUI();
   updateGameHistoryUI();
 });
+
